@@ -1,0 +1,15 @@
+C:\Users\aarnjunk\Documents\2_Ohjelmointi\TextChat\TextChat\obj\Debug\TextChat.csproj.AssemblyReference.cache
+C:\Users\aarnjunk\Documents\2_Ohjelmointi\TextChat\TextChat\obj\Debug\MainWindow.g.cs
+C:\Users\aarnjunk\Documents\2_Ohjelmointi\TextChat\TextChat\obj\Debug\App.g.cs
+C:\Users\aarnjunk\Documents\2_Ohjelmointi\TextChat\TextChat\obj\Debug\TextChat_MarkupCompile.cache
+C:\Users\aarnjunk\Documents\2_Ohjelmointi\TextChat\TextChat\obj\Debug\TextChat_MarkupCompile.lref
+C:\Users\aarnjunk\Documents\2_Ohjelmointi\TextChat\TextChat\bin\Debug\TextChat.exe.config
+C:\Users\aarnjunk\Documents\2_Ohjelmointi\TextChat\TextChat\bin\Debug\TextChat.exe
+C:\Users\aarnjunk\Documents\2_Ohjelmointi\TextChat\TextChat\bin\Debug\TextChat.pdb
+C:\Users\aarnjunk\Documents\2_Ohjelmointi\TextChat\TextChat\obj\Debug\MainWindow.baml
+C:\Users\aarnjunk\Documents\2_Ohjelmointi\TextChat\TextChat\obj\Debug\TextChat.g.resources
+C:\Users\aarnjunk\Documents\2_Ohjelmointi\TextChat\TextChat\obj\Debug\TextChat.Properties.Resources.resources
+C:\Users\aarnjunk\Documents\2_Ohjelmointi\TextChat\TextChat\obj\Debug\TextChat.csproj.GenerateResource.cache
+C:\Users\aarnjunk\Documents\2_Ohjelmointi\TextChat\TextChat\obj\Debug\TextChat.csproj.CoreCompileInputs.cache
+C:\Users\aarnjunk\Documents\2_Ohjelmointi\TextChat\TextChat\obj\Debug\TextChat.exe
+C:\Users\aarnjunk\Documents\2_Ohjelmointi\TextChat\TextChat\obj\Debug\TextChat.pdb
