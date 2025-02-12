@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Documents\\Ohjelmointi\\TextChat\\TextChat\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7455884F-6284-4108-8876-22789859147F}|TextChat\\TextChat.csproj|d:\\documents\\ohjelmointi\\textchat\\textchat\\textchat\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7455884F-6284-4108-8876-22789859147F}|TextChat\\TextChat.csproj|solutionrelative:textchat\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7455884F-6284-4108-8876-22789859147F}|TextChat\\TextChat.csproj|d:\\documents\\ohjelmointi\\textchat\\textchat\\textchat\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{7455884F-6284-4108-8876-22789859147F}|TextChat\\TextChat.csproj|solutionrelative:textchat\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "D:\\Documents\\Ohjelmointi\\TextChat\\TextChat\\TextChat\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "TextChat\\MainWindow.xaml.cs",
+              "ToolTip": "D:\\Documents\\Ohjelmointi\\TextChat\\TextChat\\TextChat\\MainWindow.xaml.cs",
+              "RelativeToolTip": "TextChat\\MainWindow.xaml.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAQwBYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T14:37:50.152Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "D:\\Documents\\Ohjelmointi\\TextChat\\TextChat\\TextChat\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "TextChat\\MainWindow.xaml",
+              "ToolTip": "D:\\Documents\\Ohjelmointi\\TextChat\\TextChat\\TextChat\\MainWindow.xaml",
+              "RelativeToolTip": "TextChat\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-02-12T16:32:53.951Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

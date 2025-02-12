@@ -7,9 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid x:Name="MainPanel">
-        <Grid x:Name="mainMenuGrid" Visibility="Collapsed">
+        <Grid x:Name="mainMenuGrid" Visibility="Visible">
             <Button Content="Connect to server" Tag="setUserGrid" Click="OpenWindow" Height="50" Width="150" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,200"/>
-            <Button Content="Server" Height="50" Width="150"/>
+            <Button Content="Server" Tag="setServerName" Click="OpenWindow" Height="50" Width="150"/>
             <Button Content="Quit" Click="Quit" Height="50" Width="150" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,200,0,0" />
         </Grid>
         <Grid x:Name="setUserGrid" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed">
@@ -37,11 +37,11 @@
             <Button x:Name="ServernameContinue" Tag="ChatWindow" Click="OpenWindow" IsEnabled="False"  Content="Continue" HorizontalAlignment="Center" Margin="400,200,0,0" VerticalAlignment="Center" Width="150" Height="50"/>
             <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="300" Margin="145,104,0,0"><Run Language="fi-fi" Text="Server name"/><Run Text=" must be atleast 3 characters long and only contain letters or digits."/></TextBlock>
         </Grid>
-        <Grid x:Name="ChatWindow">
+        <Grid x:Name="ChatWindow" Visibility="Collapsed">
             <Button Content="Quit Server" Tag="mainMenuGrid" Click="OpenWindow" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="40" Width="100"/>
-            <TextBlock x:Name="chatOutput" HorizontalAlignment="Center" Margin="0,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="329" Width="650" Grid.RowSpan="2" FontSize="24"/>
-            <TextBox x:Name="chatInputField" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="650" Height="40" Margin="0,389,0,0" FontSize="24"/>
-            <Button Content="Send" Click="SendMessage" HorizontalAlignment="Left" Margin="725,389,0,0" VerticalAlignment="Top" Height="40" Width="63"/>
+            <TextBlock x:Name="chatOutput" HorizontalAlignment="Center" Margin="0,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="329" Width="488" FontSize="24"/>
+            <TextBox x:Name="chatInputField" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="368" Height="40" Margin="0,389,0,0" FontSize="24" />
+            <Button Content="Send Message" Click="SendMessage" HorizontalAlignment="Left" Margin="682,389,0,0" VerticalAlignment="Top" Height="40" Width="106"/>
         </Grid>
     </Grid>
 </Window>

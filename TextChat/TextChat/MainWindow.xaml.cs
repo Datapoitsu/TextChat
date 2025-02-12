@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Net.Sockets;
+using System.IO;
 
 namespace TextChat
 {
@@ -20,8 +21,8 @@ namespace TextChat
     {
         Grid currentWindow;
 
-        TcpListener listener;
-        TcpClient client;
+        TcpListener listener; //Servu
+        TcpClient client; //Clientti
         NetworkStream stream;
         string username = "";
 
@@ -30,6 +31,9 @@ namespace TextChat
             InitializeComponent();
             currentWindow = mainMenuGrid;
             UsernameContinue.Click += SetUserName;
+            IpContinue.Click += Connect;
+            ServernameContinue.Click += SetupServer;
+
         }
 
         private void HideCurrentWindow()
@@ -55,6 +59,71 @@ namespace TextChat
             HideCurrentWindow();
             currentWindow = this.FindName((string)((Button)sender).Tag) as Grid;
             ShowCurrentWindow();
+        }
+
+        private void OpenWindow(string objectName)
+        {
+            HideCurrentWindow();
+            currentWindow = this.FindName(objectName) as Grid;
+            ShowCurrentWindow();
+        }
+
+        async void SetupServer(object sender, RoutedEventArgs e)
+        {
+            CreateServer();
+            await RecieveClient();
+        }
+
+        void CreateServer()
+        {
+            listener = new TcpListener(System.Net.IPAddress.Any, 1302);
+            listener.Start();
+            Console.WriteLine("Waiting for a connection.");
+        }
+
+        async Task RecieveClient()
+        {
+            client = await listener.AcceptTcpClientAsync();
+
+            chatOutput.Text += "Client connected\n";
+            stream = client.GetStream();
+            await ReceiveMessage();
+        }
+
+        async Task ReceiveMessage()
+        {
+            char[] buffer = new char[1024];
+            StreamReader sr = new StreamReader(stream);
+            await sr.ReadAsync(buffer, 0, 1024);
+
+            //Checks for disconenct
+            if (buffer[0] == 0)
+            {
+                chatOutput.Text += "User disconnected! \n";
+                return;
+            }
+
+            int endIndex = Array.IndexOf(buffer, (char)0);
+            if (endIndex != -1)
+            {
+                endIndex = endIndex < 0 ? 1024 : endIndex; // For full buffer
+                char[] slicedBuffer = new char[endIndex];
+                Array.Copy(buffer, 0, slicedBuffer, 0, endIndex);
+                chatOutput.Text += slicedBuffer + "\n";
+            }
+            else
+            {
+                chatOutput.Text += buffer + "\n";
+            }
+
+            if (client.Connected == true)
+            {
+                await ReceiveMessage();
+            }
+            else
+            {
+                CloseStream();
+            }
         }
 
         private void SetUserName(object sender, RoutedEventArgs e)
@@ -145,24 +214,48 @@ namespace TextChat
             return true;
         }
 
-        bool SendMessage()
+        void SendMessage(object sender, RoutedEventArgs e)
         {
             string messageToSend = chatInputField.Text;
 
             //Disconnecting
             if (messageToSend.ToLower() == "" || messageToSend.ToLower() == null || messageToSend.ToLower() == " ")
             {
-                return false;
+                return;
+            }
+            if(stream == null)
+            {
+                return;
             }
 
             messageToSend = username + ": " + messageToSend;
             int byteCount = Encoding.UTF8.GetByteCount(messageToSend + 1);
             byte[] sendData = Encoding.UTF8.GetBytes(messageToSend);
+            if(sendData == null)
+            {
+                return;
+            }
             stream.Write(sendData, 0, sendData.Length);
-            return true;
+            return;
         }
 
-        bool Connect(string ip = "127.0.0.1", int port = 1302)
+        void Connect(object sender, RoutedEventArgs e)
+        {
+            if(!validIpAdress(ipAddressField.Text))
+            {
+                OpenWindow("mainMenuGrid");
+            }
+            if(tryConnect(ipAddressField.Text))
+            {
+                OpenWindow("ChatWindow");
+            }
+            else
+            {
+                OpenWindow("mainMenuGrid");
+            }
+        }
+
+        bool tryConnect(string ip = "127.0.0.1", int port = 1302)
         {
             try
             {
